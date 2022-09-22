@@ -1,0 +1,4 @@
+accessing
+weights
+
+	^ weights

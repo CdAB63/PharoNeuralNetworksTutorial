@@ -1,0 +1,11 @@
+{
+	"commentStamp" : "",
+	"super" : "ActivationFunction",
+	"category" : "CdAB63-NeuralNetwork",
+	"classinstvars" : [ ],
+	"pools" : [ ],
+	"classvars" : [ ],
+	"instvars" : [ ],
+	"name" : "SigmoidAF",
+	"type" : "normal"
+}

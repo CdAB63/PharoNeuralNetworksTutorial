@@ -1,0 +1,13 @@
+{
+	"commentStamp" : "",
+	"super" : "Perceptron",
+	"category" : "CdAB63-NeuralNetwork",
+	"classinstvars" : [ ],
+	"pools" : [ ],
+	"classvars" : [ ],
+	"instvars" : [
+		"activationFunction"
+	],
+	"name" : "Neuron",
+	"type" : "normal"
+}

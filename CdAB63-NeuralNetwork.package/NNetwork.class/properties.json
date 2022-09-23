@@ -1,15 +1,15 @@
 {
 	"commentStamp" : "",
-	"super" : "Perceptron",
+	"super" : "Object",
 	"category" : "CdAB63-NeuralNetwork",
 	"classinstvars" : [ ],
 	"pools" : [ ],
 	"classvars" : [ ],
 	"instvars" : [
-		"activationFunction",
-		"delta",
-		"output"
+		"layers",
+		"errors",
+		"precisions"
 	],
-	"name" : "Neuron",
+	"name" : "NNetwork",
 	"type" : "normal"
 }

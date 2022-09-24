@@ -8,7 +8,8 @@
 	"instvars" : [
 		"layers",
 		"errors",
-		"precisions"
+		"precisions",
+		"accuracy"
 	],
 	"name" : "NNetwork",
 	"type" : "normal"

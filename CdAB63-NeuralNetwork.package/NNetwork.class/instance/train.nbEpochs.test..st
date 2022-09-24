@@ -1,5 +1,5 @@
 operations
-train: trainData nbEpochs: nbEpochs
+train: trainData nbEpochs: nbEpochs test: testData
 	"train using a dataset"
 	
 	| sumError outputs expectedOutput epochPrecision train t |
@@ -20,4 +20,5 @@ train: trainData nbEpochs: nbEpochs
 			self backwardPropagateError: expectedOutput.
 			self updateWeight: row allButLast ].
 		errors add: sumError.
-		precisions add: (epochPrecision / train size) asFloat ]
+		precisions add: (epochPrecision / train size) asFloat.
+		accuracy add: (self test: testData) ]

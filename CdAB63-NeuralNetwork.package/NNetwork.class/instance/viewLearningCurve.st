@@ -20,12 +20,25 @@ viewLearningCurve
 	ds := RTData new.
 	ds samplingIfMoreThan: 2000.
 	ds noDot; connectColor: Color red.
-	ds points: (self precisions collectWithIndex: [ :y :i | i ->y ]).
+	ds points: (self precisions collectWithIndex: [ :y :i | i -> y ]).
 	ds x: #key.
 	ds y: #value.
 	ds dotShape rectangle color: Color blue.
 	b addRight: ds.
+	self accuracy notEmpty 
+		ifTrue: [ 
+			ds := RTData new.
+			ds samplingIfMoreThan: 2000.
+			ds noDot; connectColor: Color green darker.
+			ds points: (self accuracy collectWithIndex: [ :y :i | i -> y ]).
+			ds x: #key.
+			ds y: #value.
+			ds dotShape rectangle color: Color green darker.
+			b addRight: ds ].
 	b axisX noDecimal; title: 'Epoch'.
 	b axisY title: 'Error'.
 	b axisYRight title: 'Precision'; color: Color red.
+	self accuracy notEmpty
+		ifTrue: [ 
+			b axisYRight title: 'Precision/Accuracy'; color: Color green darker ].
 	^ b

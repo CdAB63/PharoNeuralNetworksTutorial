@@ -1,44 +1,42 @@
 visualization
 viewLearningCurve
 	"Draw the error and precision curve"
-	| b ds |
+	| b ds1 ds2 ds3 |
 	self errors ifEmpty: [ 
 		^ RTView new add: (RTLabel elementOn: 'Should first run the network'); yourself ].
 	b := RTDoubleGrapher new.
 	"Define the size of the charting area"
-	b extent: 500 @ 300.
-	ds := RTData new.
+	b extent: 640 @ 480.
+	ds1 := RTData new.
+	ds1 label: 'Errors'.
 	"A simple optimization that Roassal offers"
-	ds samplingIfMoreThan: 2000.
+	ds1 samplingIfMoreThan: 2000.
 	"No need of dots, just curve"
-	ds noDot; connectColor: Color blue.
-	ds points: (self errors collectWithIndex: [ :y :i | i -> y ]).
-	ds x: #key.
-	ds y: #value.
-	ds dotShape rectangle color: Color blue.
-	b add: ds.
-	ds := RTData new.
-	ds samplingIfMoreThan: 2000.
-	ds noDot; connectColor: Color red.
-	ds points: (self precisions collectWithIndex: [ :y :i | i -> y ]).
-	ds x: #key.
-	ds y: #value.
-	ds dotShape rectangle color: Color blue.
-	b addRight: ds.
+	ds1 noDot; connectColor: Color blue.
+	ds1 points: (self errors collectWithIndex: [ :y :i | i -> y ]).
+	ds1 x: #key.
+	ds1 y: #value.
+	b add: ds1.
+	ds2 := RTData new.
+	ds2 label: 'Precisions'.
+	ds2 samplingIfMoreThan: 2000.
+	ds2 noDot; connectColor: Color red.
+	ds2 points: (self precisions collectWithIndex: [ :y :i | i -> y ]).
+	ds2 x: #key.
+	ds2 y: #value.
+	b addRight: ds2.
 	self accuracy notEmpty 
 		ifTrue: [ 
-			ds := RTData new.
-			ds samplingIfMoreThan: 2000.
-			ds noDot; connectColor: Color green darker.
-			ds points: (self accuracy collectWithIndex: [ :y :i | i -> y ]).
-			ds x: #key.
-			ds y: #value.
-			ds dotShape rectangle color: Color green darker.
-			b addRight: ds ].
-	b axisX noDecimal; title: 'Epoch'.
+			ds3 := RTData new.
+			ds3 label: 'Accuracy'.
+			ds3 samplingIfMoreThan: 2000.
+			ds3 noDot; connectColor: Color green darker.
+			ds3 points: (self accuracy collectWithIndex: [ :y :i | i -> y ]).
+			ds3 x: #key.
+			ds3 y: #value.
+			b addRight: ds3 ].
 	b axisY title: 'Error'.
-	b axisYRight title: 'Precision'; color: Color red.
 	self accuracy notEmpty
-		ifTrue: [ 
-			b axisYRight title: 'Precision/Accuracy'; color: Color green darker ].
+		ifTrue: [ b axisYRight title: 'Precision, Accuracy' ]
+		ifFalse: [ b axisYRight title: 'Precision' ].
 	^ b

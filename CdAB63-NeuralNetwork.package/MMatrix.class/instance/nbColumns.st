@@ -1,0 +1,4 @@
+accessing
+nbColumns
+
+	^ nbColumns

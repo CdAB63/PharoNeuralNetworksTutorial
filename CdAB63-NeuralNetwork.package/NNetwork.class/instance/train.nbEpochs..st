@@ -4,8 +4,8 @@ train: trainData nbEpochs: nbEpochs
 	
 	| sumError outputs expectedOutput epochPrecision train t |
 	
-	"Shuffle train data"
-	train := trainData shuffleBy: (Random seed: 42).
+	"Shuffle and normalize train data"
+	train := Normalization new normalizeData: (trainData shuffleBy: (Random seed: 42)).
 	
 	1 to: nbEpochs do: [ :epoch |
 		sumError := 0.

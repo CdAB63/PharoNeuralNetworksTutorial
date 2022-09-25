@@ -2,10 +2,12 @@ operations
 train: trainData nbEpochs: nbEpochs test: testData
 	"train using a dataset"
 	
-	| sumError outputs expectedOutput epochPrecision train t |
+	| sumError outputs expectedOutput epochPrecision train test t |
 	
-	"Shuffle train data"
-	train := trainData shuffleBy: (Random seed: 42).
+	"Shuffle and normalize train data"
+	train := Normalization new normalizeData: (trainData shuffleBy: (Random seed: 42)).
+	"normalize test data"
+	test := Normalization new normalizeData: testData.
 	
 	1 to: nbEpochs do: [ :epoch |
 		sumError := 0.
@@ -21,4 +23,4 @@ train: trainData nbEpochs: nbEpochs test: testData
 			self updateWeight: row allButLast ].
 		errors add: sumError.
 		precisions add: (epochPrecision / train size) asFloat.
-		accuracy add: (self test: testData) ]
+		accuracy add: (self test: test) ]

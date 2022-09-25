@@ -14,6 +14,7 @@ normalizeData: trainingDataWithExpectedOutput min: minValues max: maxValues
 			v := row at: index.
 			mn := minValues at: index.
 			mx := maxValues at: index.
+			mn = mx ifTrue: [ mn := 0 ].
 			t add: ((v - mn) / (mx - mn)) asFloat ].
 		t add: row last.
 		result add: t asArray ].

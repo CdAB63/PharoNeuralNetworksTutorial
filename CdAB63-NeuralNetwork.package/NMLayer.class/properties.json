@@ -1,0 +1,20 @@
+{
+	"commentStamp" : "",
+	"super" : "Object",
+	"category" : "CdAB63-NeuralNetwork",
+	"classinstvars" : [ ],
+	"pools" : [ ],
+	"classvars" : [ ],
+	"instvars" : [
+		"w",
+		"b",
+		"delta",
+		"output",
+		"previous",
+		"next",
+		"lr",
+		"numberOfExamples"
+	],
+	"name" : "NMLayer",
+	"type" : "normal"
+}

@@ -1,11 +1,11 @@
 converting
 stretchToColumns: nbOfColumns
-	"Stretch a vertical vector in a column"
+
 	| content result |
 	content := OrderedCollection new.
 	1 to: self nbRows do: [ :row |
-		1 to: nbOfColumns do: [ :column |
+		1 to: nbOfColumns do: [ :columns |
 			content add: (self at: row @ 1) ] ].
-	result := self class newRows: self nbRows columns: nbOfColumns.
+	result := MMatrix newRows: self nbRows columns: nbOfColumns.
 	result fromContents: content.
 	^ result

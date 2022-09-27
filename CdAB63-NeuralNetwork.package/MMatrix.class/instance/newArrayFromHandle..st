@@ -1,8 +1,4 @@
-instance creation
+initialization
 newArrayFromHandle: aHandle
-	"create an external array using a handle"
-	
-	^ FFIExternalArray
-			fromHandle: aHandle 
-			type: 'double'
-			size: self size
+
+	^ FFIExternalArray fromHandle: aHandle type: 'double' size: self size

@@ -1,9 +1,6 @@
 instance creation
-newHandle: aHandle rows: nbRows columns: nbColumns
-	"create a new instance with content"
-	
-	| nmtrx |
-	
-	nmtrx := self basicNew.
-	nmtrx initializeHandle: aHandle rows: nbRows columns: nbColumns.
-	^ nmtrx
+newHandle: aHandle rows: numRows columns: numColumns
+
+	^ self basicNew
+					initializeHandle: aHandle rows: numRows columns: numColumns;
+					yourself

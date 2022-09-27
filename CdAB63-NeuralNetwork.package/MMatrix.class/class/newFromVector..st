@@ -1,7 +1,7 @@
 instance creation
-newFromVector: anArray
-	"create a Nx1 matrix from an array of numbers"
+newFromVector: array
+
 	^ self basicNew
-					initializeRows: anArray size columns: 1;
-					fromContents: anArray;
+					initializeRows: array size columns: 1;
+					fromContents: array;
 					yourself

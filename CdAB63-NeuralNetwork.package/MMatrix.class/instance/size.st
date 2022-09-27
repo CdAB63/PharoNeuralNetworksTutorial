@@ -1,5 +1,4 @@
-instance creation
+initialization
 size
-	"return the matrix size (nb of elements)"
-	
-	^ self nbColumns * self nbRows
+
+	^ self nbRows * self nbColumns

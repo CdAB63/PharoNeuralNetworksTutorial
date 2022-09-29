@@ -8,7 +8,9 @@
 	"instvars" : [
 		"random",
 		"errors",
-		"layers"
+		"layers",
+		"precision",
+		"accuracy"
 	],
 	"name" : "NMNetwork",
 	"type" : "normal"

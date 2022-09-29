@@ -7,12 +7,13 @@ trainX: x y: y nbOfEpochs: nbEpochs
 	"we need to tell each layer the number of examples they have"
 	self layers do: [ :l | l numberOfExamples: y nbColumns ].
 	
-	errors := OrderedCollection new.
-	
+	self errors: OrderedCollection new.
+
 	nbEpochs timesRepeat: [ 
 		output := self feed: x.
 		cost := self computeCost: output and: y.
 		self backwardX: x y: y.
 		self update: x.
 		errors add: cost ].
+	
 	^ cost

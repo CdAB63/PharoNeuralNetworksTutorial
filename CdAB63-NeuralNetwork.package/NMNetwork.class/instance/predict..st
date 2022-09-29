@@ -5,4 +5,4 @@ predict: inputs
 	| outputs |
 	
 	outputs := self feed: inputs.
-	^ (outputs asArray indexOf: (outputs max)) - 1
+	^ { (outputs asArray indexOf: (outputs max)) - 1 . outputs asArray max }

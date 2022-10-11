@@ -1,0 +1,13 @@
+{
+	"commentStamp" : "",
+	"super" : "Object",
+	"category" : "CdAB63-GeneticAlgorithm-Core",
+	"classinstvars" : [ ],
+	"pools" : [ ],
+	"classvars" : [ ],
+	"instvars" : [
+		"random"
+	],
+	"name" : "GAObject",
+	"type" : "normal"
+}

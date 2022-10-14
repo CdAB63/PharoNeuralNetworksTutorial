@@ -1,0 +1,11 @@
+{
+	"commentStamp" : "",
+	"super" : "GAAbstractCrossoverOperation",
+	"category" : "CdAB63-GeneticAlgorithm-Core",
+	"classinstvars" : [ ],
+	"pools" : [ ],
+	"classvars" : [ ],
+	"instvars" : [ ],
+	"name" : "GACrossoverOperation",
+	"type" : "normal"
+}

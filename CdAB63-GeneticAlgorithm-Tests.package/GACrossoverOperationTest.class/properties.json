@@ -1,0 +1,15 @@
+{
+	"commentStamp" : "",
+	"super" : "TestCase",
+	"category" : "CdAB63-GeneticAlgorithm-Tests",
+	"classinstvars" : [ ],
+	"pools" : [ ],
+	"classvars" : [ ],
+	"instvars" : [
+		"i1",
+		"i2",
+		"op"
+	],
+	"name" : "GACrossoverOperationTest",
+	"type" : "normal"
+}

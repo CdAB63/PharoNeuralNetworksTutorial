@@ -1,0 +1,13 @@
+{
+	"commentStamp" : "",
+	"super" : "GAAbstractMutationOperation",
+	"category" : "CdAB63-GeneticAlgorithm-Core",
+	"classinstvars" : [ ],
+	"pools" : [ ],
+	"classvars" : [ ],
+	"instvars" : [
+		"geneFactoryBlock"
+	],
+	"name" : "GAMutationOperation",
+	"type" : "normal"
+}
